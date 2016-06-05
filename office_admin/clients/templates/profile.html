@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}User Profile{% endblock %}
+{% block head %}User Profile{% endblock %}
+{% block content %}
+<div class="col-sm-6 col-sm-offset-1">
+	{% if user.is_authenticated %}
+		<h1> Username: {{ user.username }}</h1>
+	{% else %}
+    <p>Welcome!
+        You need to <a href="{% url "clients:login" %}">login</a>
+        before you can view and edit orders.</p>
+    {% endif %}
+</div>
+{% endblock %}
