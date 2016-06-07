@@ -20,9 +20,9 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^', include("clients.urls", namespace='clients')),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', include("clients.urls", namespace='main')),
-    url(r'^client/', include("clients.urls", namespace='clients')),
+    url(r'^order/', include("orders.urls", namespace='orders')),
 ]
 
 if settings.DEBUG:
